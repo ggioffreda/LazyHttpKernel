@@ -9,7 +9,7 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
 class LazyHttpKernel implements HttpKernelInterface
 {
     private $factory;
-    private $app;
+    protected $app;
 
     public function __construct(callable $factory)
     {

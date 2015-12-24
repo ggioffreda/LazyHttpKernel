@@ -2,7 +2,7 @@
 
 namespace Stack;
 
-function lazy(callable $factory)
+function lazy(callable $factory, $terminable = false)
 {
-    return new LazyHttpKernel($factory);
+    return $terminable ? new LazyTerminableHttpKernel($factory) : new LazyHttpKernel($factory);
 }
